@@ -2,12 +2,12 @@
 
 //定时器和中断控制使能，实现pwm调速
 
+unsigned char counter,speed;        //定义周期计数和小车速度
+
 sbit EN1A = ;       //左前轮使能
 sbit EN1B = ;       //右前轮使能
 sbit EN2A = ;       //左后轮使能
 sbit EN2B = ;       //右后轮使能
-
-unsigned char counter,speed;        //定义周期计数和小车速度
 
 void Timer0_Isr() interrupt 1	//中断函数
 {
