@@ -1,18 +1,25 @@
 #include <REGX52.H>
 
-//定时器和中断实现pwm调速
+//定时器和中断控制使能，实现pwm调速
 
-void Timer0_Isr(void) interrupt 1	//中断函数
+sbit EN1A = ;       //左前轮使能
+sbit EN1B = ;       //右前轮使能
+sbit EN2A = ;       //左后轮使能
+sbit EN2B = ;       //右后轮使能
+
+unsigned char counter,speed;        //定义周期计数和小车速度
+
+void Timer0_Isr() interrupt 1	//中断函数
 {
 	TL0 = 0xA4;				//设置定时初始值
 	TH0 = 0xFF;				//设置定时初始值
-	compare = 20;			//调速开启使能时间比较变量
+    
 	counter++;
 	if(counter >=100)       //一个周期
 	{
 		counter = 0;		
 	}
-	if(counter <= compare)	//控制使能开关
+	if(counter <= speed)	//控制使能开关
 	{
 		EN1A = 1;
 		EN2A = 1;
@@ -27,7 +34,7 @@ void Timer0_Isr(void) interrupt 1	//中断函数
 	}
 }
 
-void Timer0_Init(void)		//100微秒@11.0592MHz
+void Timer0_Init()		//100微秒@11.0592MHz
 {
 	TMOD &= 0xF0;			//设置定时器模式
 	TMOD |= 0x01;			//设置定时器模式
