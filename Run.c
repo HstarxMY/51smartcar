@@ -1,6 +1,6 @@
 #include <REGX52.H>
 
-int main()
+void main()
 {
 	P0_0=1;
 	
