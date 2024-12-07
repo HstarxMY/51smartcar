@@ -3,11 +3,11 @@
 
 void main()
 {
-	Timer0_Init;
+	Timer0_Init;		//初始化时钟0，控制pwm调速
 
 	while (1)
 	{
-		
+
 	}
 
 }
