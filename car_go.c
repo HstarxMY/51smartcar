@@ -1,4 +1,5 @@
 #include <REGX52.H>
+#include "pwm.h"
 #include "motor.h"
 
 //定义小车的各种行驶状态
