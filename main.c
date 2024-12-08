@@ -1,7 +1,7 @@
 #include <REGX52.H>
 #include "pwm.h"
 #include "car_go.h"
-
+#include "ultrasound.h"
 void main()
 {
 
@@ -10,6 +10,7 @@ void main()
 	while (1)
 	{
 		car_go();
+		ultrasound();
 	}
 
 }
