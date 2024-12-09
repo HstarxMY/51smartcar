@@ -20,11 +20,11 @@ void ultrasound ()  //超声波测距程序
 //  RCAP2L = 0;			//设置定时重载值
 //  RCAP2H = 0;     //设置定时重载值
 
-		TMOD = 0x11；   //设置定时器模式
+		TMOD = 0x11;   //设置定时器模式
 	  TL1 = 0;   			//设置定时初始值
 		TH1 = 0;				//设置定时初始值
 	
-	  Trig = 1；      //发射一段脉冲 至少20us
+	  Trig = 1;      //发射一段脉冲 至少20us
 		Delay_us();     //延时20us
 		Trig = 0;       //关闭脉冲
 	
@@ -38,6 +38,6 @@ void ultrasound ()  //超声波测距程序
 	  if(mindistance > sum)
 		{
 			car_stop ();
-			Delay(1000);
+			Delay_ms(1000);
 		}
 }
