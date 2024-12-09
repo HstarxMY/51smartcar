@@ -1,14 +1,21 @@
-void Delay_ms(unsigned int xms)
+//延迟1毫秒级函数
+//直接给函数数字即可使用
+#include <intrins.h>
+
+void Delay_ms(unsigned int xms)	//@11.0592MHz
 {
 	unsigned char data i, j;
-	while(xms--)
+
+	while (xms)
 	{
-			i = 2;
-			j = 239;
-			do
-			{
-				while (--j);
-			} while (--i);
+		_nop_();
+		i = 2;
+		j = 199;
+		do
+		{
+			while (--j);
+		} 	while (--i);
 	}
 	
+	xms--;
 }
