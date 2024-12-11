@@ -20,6 +20,13 @@ void car_back(int LS,int RS)       //小车向后，左轮速度，右轮速度
 	R_motor_back ();
 }
 
+void car_turn(int LS,int RS)		//小车转弯，向左转
+{
+	Lspeed = LS;
+	Rspeed = RS;
+	L_motor_back();
+	R_motor_go();
+}
 
 void car_stop()             //小车停止
 {

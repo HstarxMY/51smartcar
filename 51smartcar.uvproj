@@ -377,11 +377,6 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
               <FileName>car_go.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\car_go.c</FilePath>
@@ -390,6 +385,11 @@
               <FileName>car_go.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\car_go.h</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main.c</FilePath>
             </File>
             <File>
               <FileName>motor.c</FileName>
@@ -402,14 +402,34 @@
               <FilePath>.\motor.h</FilePath>
             </File>
             <File>
+              <FileName>pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\pwm.c</FilePath>
+            </File>
+            <File>
               <FileName>pwm.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\pwm.h</FilePath>
             </File>
             <File>
-              <FileName>pwm.c</FileName>
+              <FileName>trace.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\pwm.c</FilePath>
+              <FilePath>.\trace.c</FilePath>
+            </File>
+            <File>
+              <FileName>trace.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\trace.h</FilePath>
+            </File>
+            <File>
+              <FileName>Delay_ms.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Delay_ms.c</FilePath>
+            </File>
+            <File>
+              <FileName>Delay_ms.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Delay_ms.h</FilePath>
             </File>
           </Files>
         </Group>
