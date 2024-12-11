@@ -4,8 +4,8 @@
 #include "Delay_ms.h"
 #include "Delay_us.h"
 
-sbit Trig = P2^1;  //超声波测距发射端位点
-sbit Echo = P2^2;  //超声波测距接收端位点
+sbit Trig = P2^0;  //超声波测距发射端位点
+sbit Echo = P2^1;  //超声波测距接收端位点
 
 unsigned int sum;	 // 
 unsigned int mindistance = 20; 

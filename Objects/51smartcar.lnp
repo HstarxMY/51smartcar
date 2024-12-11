@@ -1,0 +1,6 @@
+".\Objects\main.obj",
+".\Objects\car_go.obj",
+".\Objects\motor.obj",
+".\Objects\pwm.obj" 
+TO ".\Objects\51smartcar" 
+PRINT(".\Listings\51smartcar.m51") RAMSIZE(256) 

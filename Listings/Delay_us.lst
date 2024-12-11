@@ -1,0 +1,41 @@
+C51 COMPILER V9.60.7.0   DELAY_US                                                          12/11/2024 15:53:50 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE DELAY_US
+OBJECT MODULE PLACED IN .\Objects\Delay_us.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Delay_us.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -Delay_us.lst) OBJECT(.\Objects\Delay_us.obj)
+
+line level    source
+
+   1          //延迟20微秒级函数
+   2          //直接给函数赋值本来的数字处于二十即可使用
+   3          #include <intrins.h>
+   4          
+   5          void Delay_us(unsigned int xms) //@11.0592MHz
+   6          {
+   7   1              unsigned char data i;
+   8   1      
+   9   1              while (xms)
+  10   1              {
+  11   2                      _nop_();
+  12   2                      i = 6;
+  13   2                      while (--i);
+  14   2              }
+  15   1              
+  16   1              xms--;
+  17   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     15    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
