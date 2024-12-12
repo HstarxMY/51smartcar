@@ -11,7 +11,7 @@ void main()
 {
 	Timer0_Init();		//初始化时钟0，控制pwm调速
 
-	while (1)
+	while(1)
 	{	
 		//自动避障行驶--逻辑
 		car_go(20,25);		//笔直前行

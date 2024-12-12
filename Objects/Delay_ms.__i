@@ -1,0 +1,1 @@
+"Delay_ms.c" OPTIMIZE (8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\Delay_ms.lst) OBJECT(.\Objects\Delay_ms.obj)

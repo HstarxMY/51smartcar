@@ -23,15 +23,63 @@ Project File Date:  12/11/2024
 
 <h2>Output:</h2>
 Build target 'Target 1'
+compiling car_go.c...
 compiling main.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CAR_BACK?CAR_GO
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?CAR_STOP?CAR_GO
-Program Size: data=13.0 xdata=0 code=178
-creating hex file from ".\Objects\51smartcar"...
-".\Objects\51smartcar" - 0 Error(s), 2 Warning(s).
+Delay_ms.h(4): error C132: '_Delay_ms': not in formal parameter list
+trace.h(4): error C132: 'traceline': not in formal parameter list
+main.c(7): error C244: 'flag1': can't initialize, bad type or class
+main.c(7): error C132: 'flag1': not in formal parameter list
+main.c(8): error C244: 'flag2': can't initialize, bad type or class
+main.c(8): error C132: 'flag2': not in formal parameter list
+main.c(11): error C132: 'main': not in formal parameter list
+main.c(11): error C141: syntax error near '{', expected ';'
+main.c(12): error C132: 'Timer0_Init': not in formal parameter list
+main.c(14): error C141: syntax error near 'while', expected 'hdata'
+main.c(14): error C141: syntax error near '1', expected 'hdata'
+main.c(17): error C141: syntax error near '20', expected 'bit'
+main.c(17): error C231: '_car_go': redefinition
+main.c(20): error C141: syntax error near 'if', expected 'hdata'
+main.c(20): error C141: syntax error near '=', expected ')'
+main.c(22): error C141: syntax error near '10', expected 'bit'
+main.c(24): error C231: 'car_stop': redefinition
+main.c(25): error C141: syntax error near '1000', expected 'bit'
+main.c(26): error C141: syntax error near '}', expected 'hdata'
+main.c(31): error C141: syntax error near '=', expected ')'
+main.c(34): error C141: syntax error near '}', expected 'hdata'
+compiling trace.c...
+Delay_ms.h(4): error C132: '_Delay_ms': not in formal parameter list
+trace.c(5): error C141: syntax error near 'sbit', expected 'hdata'
+trace.c(5): error C141: syntax error near ';', expected 'sizeof'
+trace.c(6): error C202: 'left2': undefined identifier
+trace.c(6): error C141: syntax error near ';', expected 'sizeof'
+trace.c(7): error C141: syntax error near ';', expected 'sizeof'
+trace.c(8): error C141: syntax error near ';', expected 'sizeof'
+trace.c(9): error C141: syntax error near ';', expected 'sizeof'
+trace.c(11): error C141: syntax error near ';', expected 'sizeof'
+trace.c(19): error C202: 'xjxs': undefined identifier
+trace.c(20): error C202: 'left1': undefined identifier
+trace.c(22): error C202: 'xjxs': undefined identifier
+trace.c(23): error C202: 'left1': undefined identifier
+trace.c(25): error C202: 'xjxs': undefined identifier
+trace.c(26): error C202: 'left1': undefined identifier
+trace.c(28): error C202: 'xjxs': undefined identifier
+trace.c(29): error C202: 'left1': undefined identifier
+trace.c(31): error C202: 'xjxs': undefined identifier
+trace.c(32): error C202: 'left1': undefined identifier
+trace.c(34): error C202: 'xjxs': undefined identifier
+trace.c(35): error C202: 'left1': undefined identifier
+trace.c(37): error C202: 'xjxs': undefined identifier
+trace.c(38): error C202: 'left1': undefined identifier
+trace.c(40): error C202: 'xjxs': undefined identifier
+trace.c(41): error C202: 'left1': undefined identifier
+trace.c(43): error C202: 'xjxs': undefined identifier
+trace.c(44): error C202: 'left1': undefined identifier
+trace.c(46): error C202: 'xjxs': undefined identifier
+trace.c(47): error C202: 'left1': undefined identifier
+trace.c(49): error C202: 'xjxs': undefined identifier
+trace.c(58): error C202: 'xjxs': undefined identifier
+compiling Delay_ms.c...
+Target not created.
 Build Time Elapsed:  00:00:00
 </pre>
 </body>
