@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   TRACE                                                             12/11/2024 23:47:14 PAGE 1   
+C51 COMPILER V9.60.7.0   TRACE                                                             12/12/2024 22:21:52 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TRACE
@@ -11,127 +11,106 @@ line level    source
    1          #include <REGX52.H>
    2          #include "car_go.h"
    3          #include "Delay_ms.h"
-*** ERROR C132 IN LINE 4 OF Delay_ms.h: '_Delay_ms': not in formal parameter list
    4          
-   5          sbit left1  = ;     //10000
-*** ERROR C141 IN LINE 5 OF trace.c: syntax error near 'sbit', expected 'hdata'
-*** ERROR C141 IN LINE 5 OF trace.c: syntax error near ';', expected 'sizeof'
-   6          sbit left2  = ;     //01000
-*** ERROR C202 IN LINE 6 OF trace.c: 'left2': undefined identifier
-*** ERROR C141 IN LINE 6 OF trace.c: syntax error near ';', expected 'sizeof'
-   7          sbit mid3   = ;     //00100
-*** ERROR C141 IN LINE 7 OF trace.c: syntax error near ';', expected 'sizeof'
-   8          sbit right4 = ;     //00010
-*** ERROR C141 IN LINE 8 OF trace.c: syntax error near ';', expected 'sizeof'
-   9          sbit right5 = ;     //00001
-*** ERROR C141 IN LINE 9 OF trace.c: syntax error near ';', expected 'sizeof'
+   5          sbit LEFT1  = P3^3;     //10000
+   6          sbit LEFT2  = P3^4;     //01000
+   7          sbit MID3   = P3^5;     //00100
+   8          sbit RIGHT4 = P3^6;     //00010
+   9          sbit RIGHT5 = P3^7;     //00001
   10          
-  11          sbit tracekey = ;               //循迹按键
-*** ERROR C141 IN LINE 11 OF trace.c: syntax error near ';', expected 'sizeof'
+  11          // tracekey = ;         //循迹按键
   12          
   13          unsigned char xjxs = 0 ;     //循迹行驶
   14          
   15          void traceline()
   16          {
-  17   1              if ((left1==0)&&(left2==0)&&(mid3==1)&&(right4==0)&&(right5==0))        //00100
+  17   1              if ((LEFT1==0)&&(LEFT2==0)&&(MID3==1)&&(RIGHT4==0)&&(RIGHT5==0))        //00100
   18   1          {
   19   2              xjxs = 1;
-*** ERROR C202 IN LINE 19 OF trace.c: 'xjxs': undefined identifier
-  20   2          }else if ((left1==0)&&(left2==1)&&(mid3==0)&&(right4==0)&&(right5==0))  //01000
-*** ERROR C202 IN LINE 20 OF trace.c: 'left1': undefined identifier
+  20   2          }else if ((LEFT1==0)&&(LEFT2==1)&&(MID3==0)&&(RIGHT4==0)&&(RIGHT5==0))  //01000
   21   1          {
   22   2              xjxs = 2;
-*** ERROR C202 IN LINE 22 OF trace.c: 'xjxs': undefined identifier
-  23   2          }else if ((left1==0)&&(left2==0)&&(mid3==0)&&(right4==1)&&(right5==0))  //00010
-*** ERROR C202 IN LINE 23 OF trace.c: 'left1': undefined identifier
+  23   2          }else if ((LEFT1==0)&&(LEFT2==0)&&(MID3==0)&&(RIGHT4==1)&&(RIGHT5==0))  //00010
   24   1          {
   25   2              xjxs = 3;
-*** ERROR C202 IN LINE 25 OF trace.c: 'xjxs': undefined identifier
-  26   2          }else if ((left1==1)&&(left2==0)&&(mid3==0)&&(right4==0)&&(right5==0))  //10000
-*** ERROR C202 IN LINE 26 OF trace.c: 'left1': undefined identifier
+  26   2          }else if ((LEFT1==1)&&(LEFT2==0)&&(MID3==0)&&(RIGHT4==0)&&(RIGHT5==0))  //10000
   27   1          {
   28   2              xjxs = 4;
-*** ERROR C202 IN LINE 28 OF trace.c: 'xjxs': undefined identifier
-  29   2          }else if ((left1==0)&&(left2==0)&&(mid3==0)&&(right4==0)&&(right5==1))  //00001
-*** ERROR C202 IN LINE 29 OF trace.c: 'left1': undefined identifier
+  29   2          }else if ((LEFT1==0)&&(LEFT2==0)&&(MID3==0)&&(RIGHT4==0)&&(RIGHT5==1))  //00001
   30   1          {
   31   2              xjxs = 5;
-*** ERROR C202 IN LINE 31 OF trace.c: 'xjxs': undefined identifier
-  32   2          }else if ((left1==1)&&(left2==1)&&(right5==0))      //11xx0
-*** ERROR C202 IN LINE 32 OF trace.c: 'left1': undefined identifier
+  32   2          }else if ((LEFT1==1)&&(LEFT2==1)&&(RIGHT5==0))      //11xx0
   33   1          {
   34   2              xjxs = 6;
-*** ERROR C202 IN LINE 34 OF trace.c: 'xjxs': undefined identifier
-C51 COMPILER V9.60.7.0   TRACE                                                             12/11/2024 23:47:14 PAGE 2   
-
-  35   2          }else if ((left1==0)&&(right4==1)&&(right5==1))     //0xx11
-*** ERROR C202 IN LINE 35 OF trace.c: 'left1': undefined identifier
+  35   2          }else if ((LEFT1==0)&&(RIGHT4==1)&&(RIGHT5==1))     //0xx11
   36   1          {
   37   2              xjxs = 7;
-*** ERROR C202 IN LINE 37 OF trace.c: 'xjxs': undefined identifier
-  38   2          }else if ((left1==1)&&(left2==1)&&(mid3==1)&&(right4==1)&&(right5==0))  //11110
-*** ERROR C202 IN LINE 38 OF trace.c: 'left1': undefined identifier
+  38   2          }else if ((LEFT1==1)&&(LEFT2==1)&&(MID3==1)&&(RIGHT4==1)&&(RIGHT5==0))  //11110
   39   1          {
   40   2              xjxs = 8;
-*** ERROR C202 IN LINE 40 OF trace.c: 'xjxs': undefined identifier
-  41   2          }else if ((left1==0)&&(left2==1)&&(mid3==1)&&(right4==1)&&(right5==1))  //01111
-*** ERROR C202 IN LINE 41 OF trace.c: 'left1': undefined identifier
+  41   2          }else if ((LEFT1==0)&&(LEFT2==1)&&(MID3==1)&&(RIGHT4==1)&&(RIGHT5==1))  //01111
   42   1          {
   43   2              xjxs = 8;
-*** ERROR C202 IN LINE 43 OF trace.c: 'xjxs': undefined identifier
-  44   2          }else if ((left1==1)&&(left2==1)&&(mid3==1)&&(right4==1)&&(right5==1))  //11111
-*** ERROR C202 IN LINE 44 OF trace.c: 'left1': undefined identifier
+  44   2          }else if ((LEFT1==1)&&(LEFT2==1)&&(MID3==1)&&(RIGHT4==1)&&(RIGHT5==1))  //11111
   45   1          {
   46   2              xjxs = 8;
-*** ERROR C202 IN LINE 46 OF trace.c: 'xjxs': undefined identifier
-  47   2          }else if ((left1==0)&&(left2==0)&&(mid3==0)&&(right4==0)&&(right5==0))  //00000
-*** ERROR C202 IN LINE 47 OF trace.c: 'left1': undefined identifier
+  47   2          }else if ((LEFT1==0)&&(LEFT2==0)&&(MID3==0)&&(RIGHT4==0)&&(RIGHT5==0))  //00000
   48   1          {
   49   2              xjxs = 9;
-*** ERROR C202 IN LINE 49 OF trace.c: 'xjxs': undefined identifier
   50   2          }
   51   1          
   52   1          
   53   1          
   54   1          
+C51 COMPILER V9.60.7.0   TRACE                                                             12/12/2024 22:21:52 PAGE 2   
+
   55   1          
   56   1        
   57   1      
   58   1          switch(xjxs)
-*** ERROR C202 IN LINE 58 OF trace.c: 'xjxs': undefined identifier
   59   1          {
-  60   2              case 1 : car_go();break;
-  61   2              case 2 : car_go();break;
-  62   2              case 3 : car_go();break;
-  63   2              case 4 : car_go();while (1)
+  60   2              case 1 : car_go(20,25);break;
+  61   2              case 2 : car_go(20,35);break;
+  62   2              case 3 : car_go(35,25);break;
+  63   2              case 4 : car_go(20,60);while (1)
   64   2              {
-  65   3                  if (mid3==1)break;
+  65   3                  if (MID3==1)break;
   66   3              }
   67   2              break;
-  68   2              case 5 : car_go();while (1)
+  68   2              case 5 : car_go(60,25);while (1)
   69   2              {
-  70   3                  if (mid3==1)break;
+  70   3                  if (MID3==1)break;
   71   3              }
   72   2              break;
-  73   2              case 6 : car_go();while (1)
+  73   2              case 6 : car_go(0,100);while (1)
   74   2              {
-  75   3                  if (mid3==1)break;
+  75   3                  if (MID3==1)break;
   76   3              }
   77   2              break;
-  78   2              case 7 : car_go();while (1)
+  78   2              case 7 : car_go(100,0);while (1)
   79   2              {
-  80   3                  if (mid3==1)break;
+  80   3                  if (MID3==1)break;
   81   3              }
   82   2              break;
-  83   2              case 8 : car_stop();Delay_ms(1);car_go();Delay_ms(1000);car_stop();Delay_ms(1000);car_turn();while
-             -(1)
+  83   2              case 8 : car_stop();Delay_ms(1);car_go(0,0);Delay_ms(1000);car_stop();Delay_ms(1000);car_turn(0,0)
+             -;while(1)
   84   2              {
-C51 COMPILER V9.60.7.0   TRACE                                                             12/11/2024 23:47:14 PAGE 3   
-
-  85   3                  if (mid3==1)break;
+  85   3                  if (MID3==1)break;
   86   3              }break;
-  87   2              case 9 : car_go();break;
+  87   2              case 9 : car_go(0,0);break;
   88   2          }
   89   1      }
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  31 ERROR(S)
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    390    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

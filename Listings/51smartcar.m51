@@ -1,23 +1,26 @@
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    12/11/2024  17:52:32  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    12/12/2024  22:22:06  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
-C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\car_go.obj, .\Objects\motor.obj, .\Objects\pwm.obj TO .\Object
->> s\51smartcar PRINT (.\Listings\51smartcar.m51) RAMSIZE (256)
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\car_go.obj, .\Objects\main.obj, .\Objects\motor.obj, .\Objects\pwm.obj, .\Objects\
+>> trace.obj, .\Objects\Delay_ms.obj TO .\Objects\51smartcar PRINT (.\Listings\51smartcar.m51) RAMSIZE (256)
 
 
 MEMORY MODEL: SMALL
 
 
 INPUT MODULES INCLUDED:
-  .\Objects\main.obj (MAIN)
   .\Objects\car_go.obj (CAR_GO)
+  .\Objects\main.obj (MAIN)
   .\Objects\motor.obj (MOTOR)
   .\Objects\pwm.obj (PWM)
+  .\Objects\trace.obj (TRACE)
+  .\Objects\Delay_ms.obj (DELAY_MS)
   C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
 
 
-LINK MAP OF MODULE:  .\Objects\51smartcar (MAIN)
+LINK MAP OF MODULE:  .\Objects\51smartcar (CAR_GO)
 
 
             TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
@@ -26,140 +29,173 @@ LINK MAP OF MODULE:  .\Objects\51smartcar (MAIN)
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
             DATA    0008H     0004H     UNIT         ?DT?PWM
-            IDATA   000CH     0001H     UNIT         ?STACK
+            DATA    000CH     0001H     UNIT         ?DT?TRACE
+            IDATA   000DH     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     0006H     UNIT         ?PR?CAR_STOP?CAR_GO
-                    0009H     0002H                  *** GAP ***
+            CODE    0003H     0008H     UNIT         ?PR?MAIN?MAIN
             CODE    000BH     0003H     ABSOLUTE     
-            CODE    000EH     0041H     UNIT         ?PR?TIMER0_ISR?PWM
-            CODE    004FH     0017H     UNIT         ?PR?TIMER0_INIT?PWM
-            CODE    0066H     0010H     UNIT         ?PR?MAIN?MAIN
-            CODE    0076H     000CH     UNIT         ?C_C51STARTUP
-            CODE    0082H     000AH     UNIT         ?PR?_CAR_GO?CAR_GO
-            CODE    008CH     000AH     UNIT         ?PR?_CAR_BACK?CAR_GO
-            CODE    0096H     0005H     UNIT         ?PR?L_MOTOR_GO?MOTOR
-            CODE    009BH     0005H     UNIT         ?PR?L_MOTOR_BACK?MOTOR
-            CODE    00A0H     0005H     UNIT         ?PR?L_MOTOR_STOP?MOTOR
-            CODE    00A5H     0005H     UNIT         ?PR?R_MOTOR_GO?MOTOR
-            CODE    00AAH     0005H     UNIT         ?PR?R_MOTOR_BACK?MOTOR
-            CODE    00AFH     0005H     UNIT         ?PR?R_MOTOR_STOP?MOTOR
+            CODE    000EH     0186H     UNIT         ?PR?TRACELINE?TRACE
+            CODE    0194H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0220H     0041H     UNIT         ?PR?TIMER0_ISR?PWM
+            CODE    0261H     0017H     UNIT         ?PR?TIMER0_INIT?PWM
+            CODE    0278H     0011H     UNIT         ?PR?_DELAY_MS?DELAY_MS
+            CODE    0289H     000AH     UNIT         ?PR?_CAR_GO?CAR_GO
+            CODE    0293H     000AH     UNIT         ?PR?_CAR_BACK?CAR_GO
+            CODE    029DH     000AH     UNIT         ?PR?_CAR_TURN?CAR_GO
+            CODE    02A7H     0006H     UNIT         ?PR?CAR_STOP?CAR_GO
+            CODE    02ADH     0005H     UNIT         ?PR?L_MOTOR_GO?MOTOR
+            CODE    02B2H     0005H     UNIT         ?PR?L_MOTOR_BACK?MOTOR
+            CODE    02B7H     0005H     UNIT         ?PR?L_MOTOR_STOP?MOTOR
+            CODE    02BCH     0005H     UNIT         ?PR?R_MOTOR_GO?MOTOR
+            CODE    02C1H     0005H     UNIT         ?PR?R_MOTOR_BACK?MOTOR
+            CODE    02C6H     0005H     UNIT         ?PR?R_MOTOR_STOP?MOTOR
+            CODE    02CBH     0004H     UNIT         ?C_INITSEG
 
 
 
-OVERLAY MAP OF MODULE:   .\Objects\51smartcar (MAIN)
+OVERLAY MAP OF MODULE:   .\Objects\51smartcar (CAR_GO)
 
 
 SEGMENT
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/12/2024  22:22:06  PAGE 2
+
+
   +--> CALLED SEGMENT
 ---------------------
 ?C_C51STARTUP
   +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
 
 ?PR?MAIN?MAIN
   +--> ?PR?TIMER0_INIT?PWM
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/11/2024  17:52:32  PAGE 2
+  +--> ?PR?TRACELINE?TRACE
 
-
+?PR?TRACELINE?TRACE
   +--> ?PR?_CAR_GO?CAR_GO
+  +--> ?PR?CAR_STOP?CAR_GO
+  +--> ?PR?_DELAY_MS?DELAY_MS
+  +--> ?PR?_CAR_TURN?CAR_GO
 
 ?PR?_CAR_GO?CAR_GO
   +--> ?PR?L_MOTOR_GO?MOTOR
   +--> ?PR?R_MOTOR_GO?MOTOR
 
+?PR?CAR_STOP?CAR_GO
+  +--> ?PR?L_MOTOR_STOP?MOTOR
+  +--> ?PR?R_MOTOR_STOP?MOTOR
+
+?PR?_CAR_TURN?CAR_GO
+  +--> ?PR?L_MOTOR_BACK?MOTOR
+  +--> ?PR?R_MOTOR_GO?MOTOR
 
 
-SYMBOL TABLE OF MODULE:  .\Objects\51smartcar (MAIN)
+
+SYMBOL TABLE OF MODULE:  .\Objects\51smartcar (CAR_GO)
 
   VALUE           TYPE          NAME
   ----------------------------------
 
-  -------         MODULE        MAIN
-  C:0000H         SYMBOL        _ICE_DUMMY_
-  C:0066H         PUBLIC        main
-  -------         PROC          MAIN
-  C:0066H         LINE#         5
-  C:0066H         LINE#         6
-  C:0066H         LINE#         8
-  C:0069H         LINE#         10
-  C:0069H         LINE#         11
-  C:0069H         LINE#         12
-  C:0074H         LINE#         13
-  -------         ENDPROC       MAIN
-  -------         ENDMOD        MAIN
-
   -------         MODULE        CAR_GO
   C:0000H         SYMBOL        _ICE_DUMMY_
-  C:008CH         PUBLIC        _car_back
-  C:0003H         PUBLIC        car_stop
-  C:0082H         PUBLIC        _car_go
+  C:0293H         PUBLIC        _car_back
+  C:02A7H         PUBLIC        car_stop
+  C:029DH         PUBLIC        _car_turn
+  C:0289H         PUBLIC        _car_go
   -------         PROC          _CAR_GO
   D:0006H         SYMBOL        LS
   D:0004H         SYMBOL        RS
-  C:0082H         LINE#         7
-  C:0082H         LINE#         8
-  C:0082H         LINE#         9
-  C:0084H         LINE#         10
-  C:0086H         LINE#         11
-  C:0089H         LINE#         12
+  C:0289H         LINE#         7
+  C:0289H         LINE#         8
+  C:0289H         LINE#         9
+  C:028BH         LINE#         10
+  C:028DH         LINE#         11
+  C:0290H         LINE#         12
   -------         ENDPROC       _CAR_GO
   -------         PROC          _CAR_BACK
   D:0006H         SYMBOL        LS
   D:0004H         SYMBOL        RS
-  C:008CH         LINE#         15
-  C:008CH         LINE#         16
-  C:008CH         LINE#         17
-  C:008EH         LINE#         18
-  C:0090H         LINE#         19
-  C:0093H         LINE#         20
+  C:0293H         LINE#         15
+  C:0293H         LINE#         16
+  C:0293H         LINE#         17
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/12/2024  22:22:06  PAGE 3
+
+
+  C:0295H         LINE#         18
+  C:0297H         LINE#         19
+  C:029AH         LINE#         20
   -------         ENDPROC       _CAR_BACK
+  -------         PROC          _CAR_TURN
+  D:0006H         SYMBOL        LS
+  D:0004H         SYMBOL        RS
+  C:029DH         LINE#         23
+  C:029DH         LINE#         24
+  C:029DH         LINE#         25
+  C:029FH         LINE#         26
+  C:02A1H         LINE#         27
+  C:02A4H         LINE#         28
+  -------         ENDPROC       _CAR_TURN
   -------         PROC          CAR_STOP
-  C:0003H         LINE#         24
-  C:0003H         LINE#         25
-  C:0003H         LINE#         26
-  C:0006H         LINE#         27
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/11/2024  17:52:32  PAGE 3
-
-
+  C:02A7H         LINE#         31
+  C:02A7H         LINE#         32
+  C:02A7H         LINE#         33
+  C:02AAH         LINE#         34
   -------         ENDPROC       CAR_STOP
   -------         ENDMOD        CAR_GO
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0003H         PUBLIC        main
+  -------         PROC          MAIN
+  C:0003H         LINE#         10
+  C:0003H         LINE#         11
+  C:0003H         LINE#         12
+  C:0006H         LINE#         14
+  C:0006H         LINE#         15
+  C:0006H         LINE#         39
+  C:0009H         LINE#         41
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
 
   -------         MODULE        MOTOR
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0090H         PUBLIC        P1
-  C:00A0H         PUBLIC        L_motor_stop
+  C:02B7H         PUBLIC        L_motor_stop
   B:0090H.1       PUBLIC        INA1
   B:0090H.3       PUBLIC        INB1
   B:0090H.4       PUBLIC        INB2
-  C:00AFH         PUBLIC        R_motor_stop
-  C:0096H         PUBLIC        L_motor_go
-  C:00A5H         PUBLIC        R_motor_go
-  C:009BH         PUBLIC        L_motor_back
-  C:00AAH         PUBLIC        R_motor_back
+  C:02C6H         PUBLIC        R_motor_stop
+  C:02ADH         PUBLIC        L_motor_go
+  C:02BCH         PUBLIC        R_motor_go
+  C:02B2H         PUBLIC        L_motor_back
+  C:02C1H         PUBLIC        R_motor_back
   -------         PROC          L_MOTOR_GO
-  C:0096H         LINE#         12
-  C:0096H         LINE#         13
+  C:02ADH         LINE#         12
+  C:02ADH         LINE#         13
   -------         ENDPROC       L_MOTOR_GO
   -------         PROC          L_MOTOR_BACK
-  C:009BH         LINE#         14
-  C:009BH         LINE#         15
+  C:02B2H         LINE#         14
+  C:02B2H         LINE#         15
   -------         ENDPROC       L_MOTOR_BACK
   -------         PROC          L_MOTOR_STOP
-  C:00A0H         LINE#         16
-  C:00A0H         LINE#         17
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/12/2024  22:22:06  PAGE 4
+
+
+  C:02B7H         LINE#         16
+  C:02B7H         LINE#         17
   -------         ENDPROC       L_MOTOR_STOP
   -------         PROC          R_MOTOR_GO
-  C:00A5H         LINE#         21
-  C:00A5H         LINE#         22
+  C:02BCH         LINE#         21
+  C:02BCH         LINE#         22
   -------         ENDPROC       R_MOTOR_GO
   -------         PROC          R_MOTOR_BACK
-  C:00AAH         LINE#         23
-  C:00AAH         LINE#         24
+  C:02C1H         LINE#         23
+  C:02C1H         LINE#         24
   -------         ENDPROC       R_MOTOR_BACK
   -------         PROC          R_MOTOR_STOP
-  C:00AFH         LINE#         25
-  C:00AFH         LINE#         26
+  C:02C6H         LINE#         25
+  C:02C6H         LINE#         26
   -------         ENDPROC       R_MOTOR_STOP
   -------         ENDMOD        MOTOR
 
@@ -167,9 +203,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\51smartcar (MAIN)
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0090H         PUBLIC        P1
   B:00A8H.7       PUBLIC        EA
-  C:004FH         PUBLIC        Timer0_Init
+  C:0261H         PUBLIC        Timer0_Init
   D:0089H         PUBLIC        TMOD
-  C:000EH         PUBLIC        Timer0_Isr
+  C:0220H         PUBLIC        Timer0_Isr
   B:00A8H.1       PUBLIC        ET0
   B:0088H.5       PUBLIC        TF0
   D:008CH         PUBLIC        TH0
@@ -179,63 +215,173 @@ SYMBOL TABLE OF MODULE:  .\Objects\51smartcar (MAIN)
   B:0090H.5       PUBLIC        ENB
   B:0088H.4       PUBLIC        TR0
   D:0008H         PUBLIC        Lspeed
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/11/2024  17:52:32  PAGE 4
-
-
   D:0009H         PUBLIC        Rspeed
   D:000AH         PUBLIC        l
   D:000BH         PUBLIC        r
   -------         PROC          TIMER0_INIT
-  C:004FH         LINE#         10
-  C:004FH         LINE#         11
-  C:004FH         LINE#         12
-  C:0052H         LINE#         13
-  C:0055H         LINE#         14
-  C:0058H         LINE#         15
-  C:005BH         LINE#         16
-  C:005DH         LINE#         17
-  C:005FH         LINE#         18
-  C:0061H         LINE#         19
-  C:0063H         LINE#         20
-  C:0065H         LINE#         21
+  C:0261H         LINE#         10
+  C:0261H         LINE#         11
+  C:0261H         LINE#         12
+  C:0264H         LINE#         13
+  C:0267H         LINE#         14
+  C:026AH         LINE#         15
+  C:026DH         LINE#         16
+  C:026FH         LINE#         17
+  C:0271H         LINE#         18
+  C:0273H         LINE#         19
+  C:0275H         LINE#         20
+  C:0277H         LINE#         21
   -------         ENDPROC       TIMER0_INIT
   -------         PROC          TIMER0_ISR
-  C:000EH         LINE#         23
-  C:0012H         LINE#         25
-  C:0015H         LINE#         26
-  C:0018H         LINE#         28
-  C:001AH         LINE#         29
-  C:001CH         LINE#         31
-  C:0023H         LINE#         32
-  C:0023H         LINE#         33
-  C:0025H         LINE#         34
-  C:0027H         LINE#         35
-  C:0027H         LINE#         36
-  C:0029H         LINE#         37
-  C:0029H         LINE#         38
-  C:0030H         LINE#         39
-  C:0030H         LINE#         40
-  C:0032H         LINE#         41
-  C:0034H         LINE#         42
-  C:0034H         LINE#         43
-  C:0036H         LINE#         44
-  C:0036H         LINE#         46
-  C:003DH         LINE#         47
-  C:003DH         LINE#         48
-  C:0040H         LINE#         49
-  C:0040H         LINE#         50
-  C:0047H         LINE#         51
-  C:0047H         LINE#         52
-  C:004AH         LINE#         53
-  C:004AH         LINE#         55
+  C:0220H         LINE#         23
+  C:0224H         LINE#         25
+  C:0227H         LINE#         26
+  C:022AH         LINE#         28
+  C:022CH         LINE#         29
+  C:022EH         LINE#         31
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/12/2024  22:22:06  PAGE 5
+
+
+  C:0235H         LINE#         32
+  C:0235H         LINE#         33
+  C:0237H         LINE#         34
+  C:0239H         LINE#         35
+  C:0239H         LINE#         36
+  C:023BH         LINE#         37
+  C:023BH         LINE#         38
+  C:0242H         LINE#         39
+  C:0242H         LINE#         40
+  C:0244H         LINE#         41
+  C:0246H         LINE#         42
+  C:0246H         LINE#         43
+  C:0248H         LINE#         44
+  C:0248H         LINE#         46
+  C:024FH         LINE#         47
+  C:024FH         LINE#         48
+  C:0252H         LINE#         49
+  C:0252H         LINE#         50
+  C:0259H         LINE#         51
+  C:0259H         LINE#         52
+  C:025CH         LINE#         53
+  C:025CH         LINE#         55
   -------         ENDPROC       TIMER0_ISR
   -------         ENDMOD        PWM
+
+  -------         MODULE        TRACE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00B0H         PUBLIC        P3
+  B:00B0H.5       PUBLIC        MID3
+  B:00B0H.6       PUBLIC        RIGHT4
+  B:00B0H.7       PUBLIC        RIGHT5
+  C:000EH         PUBLIC        traceline
+  D:000CH         PUBLIC        xjxs
+  B:00B0H.3       PUBLIC        LEFT1
+  B:00B0H.4       PUBLIC        LEFT2
+  -------         PROC          TRACELINE
+  C:000EH         LINE#         15
+  C:000EH         LINE#         16
+  C:000EH         LINE#         17
+  C:001DH         LINE#         18
+  C:001DH         LINE#         19
+  C:0020H         LINE#         20
+  C:0032H         LINE#         21
+  C:0032H         LINE#         22
+  C:0035H         LINE#         23
+  C:0047H         LINE#         24
+  C:0047H         LINE#         25
+  C:004AH         LINE#         26
+  C:005CH         LINE#         27
+  C:005CH         LINE#         28
+  C:005FH         LINE#         29
+  C:0070H         LINE#         30
+  C:0070H         LINE#         31
+  C:0073H         LINE#         32
+  C:007EH         LINE#         33
+  C:007EH         LINE#         34
+  C:0081H         LINE#         35
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/12/2024  22:22:06  PAGE 6
+
+
+  C:008CH         LINE#         36
+  C:008CH         LINE#         37
+  C:008FH         LINE#         38
+  C:00A0H         LINE#         39
+  C:00A0H         LINE#         40
+  C:00A0H         LINE#         41
+  C:00B1H         LINE#         42
+  C:00B1H         LINE#         43
+  C:00B1H         LINE#         44
+  C:00C2H         LINE#         45
+  C:00C2H         LINE#         46
+  C:00C5H         LINE#         47
+  C:00D6H         LINE#         48
+  C:00D6H         LINE#         49
+  C:00D9H         LINE#         50
+  C:00D9H         LINE#         58
+  C:010DH         LINE#         59
+  C:010DH         LINE#         60
+  C:0111H         LINE#         61
+  C:0119H         LINE#         62
+  C:0123H         LINE#         63
+  C:012EH         LINE#         64
+  C:012EH         LINE#         65
+  C:0132H         LINE#         66
+  C:0132H         LINE#         67
+  C:0132H         LINE#         68
+  C:013DH         LINE#         69
+  C:013DH         LINE#         70
+  C:0141H         LINE#         71
+  C:0141H         LINE#         72
+  C:0141H         LINE#         73
+  C:014BH         LINE#         74
+  C:014BH         LINE#         75
+  C:014FH         LINE#         76
+  C:014FH         LINE#         77
+  C:014FH         LINE#         78
+  C:0158H         LINE#         79
+  C:0158H         LINE#         80
+  C:015CH         LINE#         81
+  C:015CH         LINE#         82
+  C:015CH         LINE#         83
+  C:0187H         LINE#         84
+  C:0187H         LINE#         85
+  C:018BH         LINE#         86
+  C:018BH         LINE#         87
+  C:0193H         LINE#         88
+  C:0193H         LINE#         89
+  -------         ENDPROC       TRACELINE
+  -------         ENDMOD        TRACE
+
+  -------         MODULE        DELAY_MS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0278H         PUBLIC        _Delay_ms
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        xms
+  -------         DO            
+  D:0005H         SYMBOL        i
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/12/2024  22:22:06  PAGE 7
+
+
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0278H         LINE#         5
+  C:0278H         LINE#         6
+  C:0278H         LINE#         9
+  C:027CH         LINE#         10
+  C:027CH         LINE#         11
+  C:027DH         LINE#         12
+  C:027FH         LINE#         13
+  C:0281H         LINE#         15
+  C:0281H         LINE#         16
+  C:0283H         LINE#         17
+  C:0285H         LINE#         18
+  C:0287H         LINE#         20
+  C:0288H         LINE#         21
+  -------         ENDPROC       _DELAY_MS
+  -------         ENDMOD        DELAY_MS
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_CAR_BACK?CAR_GO
 
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?CAR_STOP?CAR_GO
-
-Program Size: data=13.0 xdata=0 code=178
-LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)
+Program Size: data=14.0 xdata=0 code=719
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

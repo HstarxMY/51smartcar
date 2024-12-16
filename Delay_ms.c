@@ -1,6 +1,6 @@
+#include <intrins.h>
 //延迟1毫秒级函数
 //直接给函数数字即可使用
-#include <intrins.h>
 
 void Delay_ms(unsigned int xms)	//@11.0592MHz
 {
