@@ -1,1 +1,0 @@
-"bluetooth.c" OPTIMIZE (8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\bluetooth.lst) OBJECT(.\Objects\bluetooth.obj)

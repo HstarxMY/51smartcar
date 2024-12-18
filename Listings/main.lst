@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   MAIN                                                              12/17/2024 19:20:14 PAGE 1   
+C51 COMPILER V9.60.7.0   MAIN                                                              12/19/2024 00:40:30 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
@@ -18,24 +18,21 @@ line level    source
    8          void main()
    9          {
   10   1              Timer0_Init();          //初始化时钟0，控制pwm调速
-  11   1              Timer1_Init();           //9600bps@11.0592MHz 初始化时钟1，蓝牙接收数据
-  12   1              
-  13   1              while(1)
-  14   1              {       
-  15   2                      
-  16   2      //              car_go(40,45);
-  17   2                      if(flag == 1)
-  18   2                      {
-  19   3                              Delay_ms(10);
-  20   3                              traceline();
-  21   3                      }
-  22   2                      
-  23   2              }       
-  24   1      }
+  11   1              Timer1_Init();          //初始化时钟1，控制蓝牙接收
+  12   1              while(1)
+  13   1              {       
+  14   2              
+  15   2                      if(flag == 1)
+  16   2                      {
+  17   3                              traceline();
+  18   3                      }
+  19   2                      
+  20   2              }       
+  21   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     23    ----
+   CODE SIZE        =     16    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

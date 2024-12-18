@@ -10,29 +10,31 @@ void receive(unsigned char m)
 	switch(m)
     {
         
-        case  '1':      //前进
+        case  '2':      //前进
             car_go(40,45);
         break;
         
-        case  'C':
+        case  '4':
             car_turn_L(40,45);    // 左转
         break;
         
-        case  'D':
+        case  '6':
             car_turn_L(40,45);    // 右转
         break;
         
-        case 'B':
+        case '8':
             car_back(40,45);   //  后退
         break;
         
-        case 'S':      // 停止
+        case '5':      // 停止
              car_stop();
         break;
-		case 'T':
+		
+		case '7':
 			flag = 1;		//循迹模式开启
 		break;
-		case 'F':		//循迹模式关闭
+		
+		case '9':		//循迹模式关闭
 			flag = 0;
 		break;
         
@@ -42,25 +44,21 @@ void receive(unsigned char m)
 
 void Timer1_Isr(void) interrupt 4
 {
-//	car_stop();
+	car_stop();
     RI = 0;                  //清除接受中断标志位
     U_data = SBUF;                    //接受数据
     receive(U_data);
 }
 
-void Timer1_Init(void)		 //9600bps@11.0592MHz
+void Timer1_Init()		 //9600bps@11.0592MHz
 {
-	PCON &= 0x7F;            //波特率不倍速
-    SCON = 0x50;            //8位数据,可变波特率
-//	AUXR &= 0xBF;            //定时器时钟12T模式
-//	AUXR &= 0xFE;            //串口1选择定时器1为波特率发生器
-    TMOD &= 0x0F;             //设置定时器模式
-    TMOD |= 0x20;             //设置定时器模式
-    TL1 = 0xFD;                //设置定时初始值
-    TH1 = 0xFD;                //设置定时重载值
-    ET1 = 0;                     //禁止定时器中断
-    TR1 = 1;                  //定时器1开始计时
-    EA  = 1;
-    ES  = 1;
-
+	PCON = 0x00;		//关倍频
+	SCON = 0x50;		//八位数据，可变波特率	
+	TMOD = 0x20;		//设置定时器模式
+	TL1 = 0xFd;			//设置定时器初始值
+	TH1 = 0xFd;			//设置定时器初始值
+	ET1 = 0;			//禁止定时器1中断
+	TR1 = 1;			//定时器1开始计时
+	EA = 1;				//总中断
+	ES = 1;				//打开串口中断
 }
