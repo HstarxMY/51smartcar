@@ -80,7 +80,7 @@ void traceline()
             if (MID3==1)break;
         }
         break;
-        case 8 : car_stop();Delay_ms(1);car_go(0,0);Delay_ms(1000);car_stop();Delay_ms(1000);car_turn(0,0);while(1)
+        case 8 : car_stop();Delay_ms(1);car_go(0,0);Delay_ms(1000);car_stop();Delay_ms(1000);car_turn_L(0,0);while(1)
         {
             if (MID3==1)break;
         }break;

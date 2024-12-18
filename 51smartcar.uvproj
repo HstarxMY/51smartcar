@@ -431,6 +431,46 @@
               <FileType>5</FileType>
               <FilePath>.\Delay_ms.h</FilePath>
             </File>
+            <File>
+              <FileName>bluetooth.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\bluetooth.c</FilePath>
+            </File>
+            <File>
+              <FileName>bluetooth.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\bluetooth.h</FilePath>
+            </File>
+            <File>
+              <FileName>Delay_us.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Delay_us.c</FilePath>
+            </File>
+            <File>
+              <FileName>Delay_us.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Delay_us.h</FilePath>
+            </File>
+            <File>
+              <FileName>servo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\servo.c</FilePath>
+            </File>
+            <File>
+              <FileName>servo.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\servo.h</FilePath>
+            </File>
+            <File>
+              <FileName>ultrasound.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\ultrasound.c</FilePath>
+            </File>
+            <File>
+              <FileName>ultrasound.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ultrasound.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

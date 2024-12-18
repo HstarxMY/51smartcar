@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   TRACE                                                             12/12/2024 22:21:52 PAGE 1   
+C51 COMPILER V9.60.7.0   TRACE                                                             12/17/2024 19:09:20 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TRACE
@@ -62,7 +62,7 @@ line level    source
   52   1          
   53   1          
   54   1          
-C51 COMPILER V9.60.7.0   TRACE                                                             12/12/2024 22:21:52 PAGE 2   
+C51 COMPILER V9.60.7.0   TRACE                                                             12/17/2024 19:09:20 PAGE 2   
 
   55   1          
   56   1        
@@ -92,8 +92,8 @@ line level    source
   80   3                  if (MID3==1)break;
   81   3              }
   82   2              break;
-  83   2              case 8 : car_stop();Delay_ms(1);car_go(0,0);Delay_ms(1000);car_stop();Delay_ms(1000);car_turn(0,0)
-             -;while(1)
+  83   2              case 8 : car_stop();Delay_ms(1);car_go(0,0);Delay_ms(1000);car_stop();Delay_ms(1000);car_turn_L(0,
+             -0);while(1)
   84   2              {
   85   3                  if (MID3==1)break;
   86   3              }break;
