@@ -3,9 +3,11 @@
 //定时器和中断控制使能，实现pwm调速
 
 unsigned char l,r,Lspeed,Rspeed;        //定义周期计数和小车速度
+unsigned char counter,angle;
 
 sbit ENA = P1^0;       //左轮使能
 sbit ENB = P1^5;       //右轮使能
+sbit PWM = P0^0;
 
 void Timer0_Init()		//100微秒@11.0592MHz
 {
@@ -25,8 +27,10 @@ void Timer0_Isr() interrupt 1	//中断函数
 	TL0 = 0xA4;				//设置定时初始值
 	TH0 = 0xFF;				//设置定时初始值
     
+	
 	l++;
 	r++;
+	counter++;
 	
 	if(l <= Lspeed)	//控制左轮使能开关
 	{
@@ -52,5 +56,18 @@ void Timer0_Isr() interrupt 1	//中断函数
 		r = 0;		
 	}
 
+	
+	if (counter >= 200)
+	{
+		counter = 0;
+	}
+	if (counter < angle)
+	{
+		PWM=1;
+	}
+	else
+	{
+		PWM=0;
+	}
 }
 

@@ -461,16 +461,6 @@
               <FileType>5</FileType>
               <FilePath>.\servo.h</FilePath>
             </File>
-            <File>
-              <FileName>ultrasound.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\ultrasound.c</FilePath>
-            </File>
-            <File>
-              <FileName>ultrasound.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\ultrasound.h</FilePath>
-            </File>
           </Files>
         </Group>
       </Groups>

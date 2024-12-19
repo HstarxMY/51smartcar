@@ -3,6 +3,6 @@
 
 	void Timer0_Init();     //定时器初始化
 
-	extern unsigned char Lspeed,Rspeed;        //定义小车速度
+	extern unsigned char Lspeed,Rspeed,counter,angle;        //定义小车速度
 
 #endif

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   SERVO                                                             12/19/2024 00:45:22 PAGE 1   
+C51 COMPILER V9.60.7.0   SERVO                                                             12/19/2024 18:27:39 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE SERVO
@@ -9,10 +9,22 @@ COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE servo.c OPTIMIZE(8,SPEED) BROWSE
 line level    source
 
    1          #include <REGX52.H>
+   2          #include <intrins.h>
+   3          #include "Delay_ms.h"
+   4          #include "pwm.h"
+   5          
+   6          //10-40         ????
+   7          
+   8          void control ()
+   9          {
+  10   1              counter = 0;
+  11   1              angle = 25;
+  12   1              Delay_ms(500);
+  13   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   ----    ----
+   CODE SIZE        =     13    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

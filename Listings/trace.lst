@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   TRACE                                                             12/19/2024 00:45:22 PAGE 1   
+C51 COMPILER V9.60.7.0   TRACE                                                             12/19/2024 18:16:48 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TRACE
@@ -24,37 +24,37 @@ line level    source
   14          
   15          void traceline()
   16          {
-  17   1              if ((LEFT1==0)&&(LEFT2==0)&&(MID3==1)&&(RIGHT4==0)&&(RIGHT5==0))        //00100
+  17   1              if ((LEFT1==1)&&(LEFT2==1)&&(MID3==0)&&(RIGHT4==1)&&(RIGHT5==1))        //11011
   18   1          {
   19   2              xjxs = 1;
-  20   2          }else if ((LEFT1==0)&&(LEFT2==1)&&(MID3==0)&&(RIGHT4==0)&&(RIGHT5==0))  //01000
+  20   2          }else if ((LEFT1==1)&&(LEFT2==0)&&(MID3==1)&&(RIGHT4==1)&&(RIGHT5==1))  //10111
   21   1          {
   22   2              xjxs = 2;
-  23   2          }else if ((LEFT1==0)&&(LEFT2==0)&&(MID3==0)&&(RIGHT4==1)&&(RIGHT5==0))  //00010
+  23   2          }else if ((LEFT1==1)&&(LEFT2==1)&&(MID3==1)&&(RIGHT4==0)&&(RIGHT5==1))  //11101
   24   1          {
   25   2              xjxs = 3;
-  26   2          }else if ((LEFT1==1)&&(LEFT2==0)&&(MID3==0)&&(RIGHT4==0)&&(RIGHT5==0))  //10000
+  26   2          }else if ((LEFT1==0)&&(LEFT2==1)&&(MID3==1)&&(RIGHT4==1)&&(RIGHT5==1))  //01111
   27   1          {
   28   2              xjxs = 4;
-  29   2          }else if ((LEFT1==0)&&(LEFT2==0)&&(MID3==0)&&(RIGHT4==0)&&(RIGHT5==1))  //00001
+  29   2          }else if ((LEFT1==1)&&(LEFT2==1)&&(MID3==1)&&(RIGHT4==1)&&(RIGHT5==0))  //11110
   30   1          {
   31   2              xjxs = 5;
-  32   2          }else if ((LEFT1==1)&&(LEFT2==1)&&(RIGHT5==0))      //11xx0
+  32   2          }else if ((LEFT1==0)&&(LEFT2==0)&&(RIGHT5==1))      //00xx1
   33   1          {
   34   2              xjxs = 6;
-  35   2          }else if ((LEFT1==0)&&(RIGHT4==1)&&(RIGHT5==1))     //0xx11
+  35   2          }else if ((LEFT1==1)&&(RIGHT4==0)&&(RIGHT5==0))     //1xx00
   36   1          {
   37   2              xjxs = 7;
-  38   2          }else if ((LEFT1==1)&&(LEFT2==1)&&(MID3==1)&&(RIGHT4==1)&&(RIGHT5==0))  //11110
+  38   2          }else if ((LEFT1==0)&&(LEFT2==0)&&(MID3==0)&&(RIGHT4==0)&&(RIGHT5==1))  //00001
   39   1          {
   40   2              xjxs = 8;
-  41   2          }else if ((LEFT1==0)&&(LEFT2==1)&&(MID3==1)&&(RIGHT4==1)&&(RIGHT5==1))  //01111
+  41   2          }else if ((LEFT1==1)&&(LEFT2==0)&&(MID3==0)&&(RIGHT4==0)&&(RIGHT5==1))  //00001
   42   1          {
   43   2              xjxs = 8;
-  44   2          }else if ((LEFT1==1)&&(LEFT2==1)&&(MID3==1)&&(RIGHT4==1)&&(RIGHT5==1))  //11111
+  44   2          }else if ((LEFT1==0)&&(LEFT2==0)&&(MID3==0)&&(RIGHT4==0)&&(RIGHT5==0))  //00000
   45   1          {
   46   2              xjxs = 8;
-  47   2          }else if ((LEFT1==0)&&(LEFT2==0)&&(MID3==0)&&(RIGHT4==0)&&(RIGHT5==0))  //00000
+  47   2          }else if ((LEFT1==1)&&(LEFT2==1)&&(MID3==1)&&(RIGHT4==1)&&(RIGHT5==1))  //11111
   48   1          {
   49   2              xjxs = 9;
   50   2          }
@@ -62,7 +62,7 @@ line level    source
   52   1          
   53   1          
   54   1          
-C51 COMPILER V9.60.7.0   TRACE                                                             12/19/2024 00:45:22 PAGE 2   
+C51 COMPILER V9.60.7.0   TRACE                                                             12/19/2024 18:16:48 PAGE 2   
 
   55   1          
   56   1        

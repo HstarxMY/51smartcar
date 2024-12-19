@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   BLUETOOTH                                                         12/19/2024 00:45:22 PAGE 1   
+C51 COMPILER V9.60.7.0   BLUETOOTH                                                         12/19/2024 18:16:48 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE BLUETOOTH
@@ -12,7 +12,7 @@ line level    source
    2          #include "car_go.h"
    3          
    4          unsigned char U_data;     //接受数据存放
-   5          unsigned char flag = 0;         //切换循迹模式 0为关闭 1为开启
+   5          unsigned char flag;             //切换循迹模式 0为关闭 1为开启
    6          
    7          void receive(unsigned char m)
    8          {
@@ -51,7 +51,7 @@ line level    source
   41   1      
   42   1      }
   43          
-  44          void Timer1_Isr(void) interrupt 4
+  44          void Timer1_Isr() interrupt 4
   45          {
   46   1              car_stop();
   47   1          RI = 0;                  //清除接受中断标志位
@@ -62,12 +62,12 @@ line level    source
   52          void Timer1_Init()               //9600bps@11.0592MHz
   53          {
   54   1              PCON = 0x00;            //关倍频
-C51 COMPILER V9.60.7.0   BLUETOOTH                                                         12/19/2024 00:45:22 PAGE 2   
+C51 COMPILER V9.60.7.0   BLUETOOTH                                                         12/19/2024 18:16:48 PAGE 2   
 
   55   1              SCON = 0x50;            //八位数据，可变波特率        
   56   1              TMOD = 0x20;            //设置定时器模式
-  57   1              TL1 = 0xFd;                     //设置定时器初始值
-  58   1              TH1 = 0xFd;                     //设置定时器初始值
+  57   1              TL1 = 0xFD;                     //设置定时器初始值
+  58   1              TH1 = 0xFD;                     //设置定时器初始值
   59   1              ET1 = 0;                        //禁止定时器1中断
   60   1              TR1 = 1;                        //定时器1开始计时
   61   1              EA = 1;                         //总中断

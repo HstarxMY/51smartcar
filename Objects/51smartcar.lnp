@@ -6,7 +6,6 @@
 ".\Objects\Delay_ms.obj",
 ".\Objects\bluetooth.obj",
 ".\Objects\Delay_us.obj",
-".\Objects\servo.obj",
-".\Objects\ultrasound.obj" 
+".\Objects\servo.obj" 
 TO ".\Objects\51smartcar" 
 PRINT(".\Listings\51smartcar.m51") RAMSIZE(256) 
