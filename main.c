@@ -12,14 +12,14 @@ void main()
 	while(1)
 	{	
 		
-		control();
+//		control();
 		
 //		car_go(40,45);
 		
-//		if(flag == 1)
-//		{
-//			traceline();
-//		}
+		if(flag == 1)
+		{
+			traceline();
+		}
 		
 	}	
 }

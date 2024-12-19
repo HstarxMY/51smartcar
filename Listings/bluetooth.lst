@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   BLUETOOTH                                                         12/19/2024 18:16:48 PAGE 1   
+C51 COMPILER V9.60.7.0   BLUETOOTH                                                         12/19/2024 20:59:35 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE BLUETOOTH
@@ -62,7 +62,7 @@ line level    source
   52          void Timer1_Init()               //9600bps@11.0592MHz
   53          {
   54   1              PCON = 0x00;            //关倍频
-C51 COMPILER V9.60.7.0   BLUETOOTH                                                         12/19/2024 18:16:48 PAGE 2   
+C51 COMPILER V9.60.7.0   BLUETOOTH                                                         12/19/2024 20:59:35 PAGE 2   
 
   55   1              SCON = 0x50;            //八位数据，可变波特率        
   56   1              TMOD = 0x20;            //设置定时器模式
@@ -70,8 +70,8 @@ line level    source
   58   1              TH1 = 0xFD;                     //设置定时器初始值
   59   1              ET1 = 0;                        //禁止定时器1中断
   60   1              TR1 = 1;                        //定时器1开始计时
-  61   1              EA = 1;                         //总中断
-  62   1              ES = 1;                         //打开串口中断
+  61   1              EA = 1;
+  62   1              ES = 1;
   63   1      }
 
 

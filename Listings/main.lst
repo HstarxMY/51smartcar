@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   MAIN                                                              12/19/2024 18:20:26 PAGE 1   
+C51 COMPILER V9.60.7.0   MAIN                                                              12/19/2024 20:59:35 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
@@ -22,22 +22,21 @@ line level    source
   12   1              while(1)
   13   1              {       
   14   2                      
-  15   2                      control();
-*** WARNING C206 IN LINE 15 OF main.c: 'control': missing function-prototype
+  15   2      //              control();
   16   2                      
   17   2      //              car_go(40,45);
   18   2                      
-  19   2      //              if(flag == 1)
-  20   2      //              {
-  21   2      //                      traceline();
-  22   2      //              }
+  19   2                      if(flag == 1)
+  20   2                      {
+  21   3                              traceline();
+  22   3                      }
   23   2                      
   24   2              }       
   25   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     11    ----
+   CODE SIZE        =     16    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
@@ -47,4 +46,4 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
