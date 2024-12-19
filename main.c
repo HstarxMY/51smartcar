@@ -11,7 +11,7 @@ void main()
 	Timer1_Init();		//初始化时钟1，控制蓝牙接收
 	while(1)
 	{	
-	
+		
 		if(flag == 1)
 		{
 			traceline();

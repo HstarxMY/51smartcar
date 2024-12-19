@@ -1,6 +1,5 @@
 #include <REGX52.H>
 #include "car_go.h"
-#include "trace.h"
 
 unsigned char U_data;     //接受数据存放
 unsigned char flag = 0;		//切换循迹模式 0为关闭 1为开启

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   ULTRASOUND                                                        12/19/2024 00:39:43 PAGE 1   
+C51 COMPILER V9.60.7.0   ULTRASOUND                                                        12/19/2024 00:45:22 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE ULTRASOUND
@@ -35,8 +35,7 @@ line level    source
   25   1                      TH1 = 0;                                //设置定时初始值
   26   1              
   27   1                Trig = 1;      //发射一段脉冲 至少20us
-  28   1                      Delay_us();     //延时20us
-*** WARNING C209 IN LINE 28 OF ultrasound.c: '_Delay_us': too few actual parameters
+  28   1                      Delay_us(1);     //延时20us
   29   1                      Trig = 0;       //关闭脉冲
   30   1              
   31   1                      while(!Echo);   //等待超声波模块返回脉冲
@@ -55,16 +54,16 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    102    ----
+   CODE SIZE        =    105    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =      4    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
-C51 COMPILER V9.60.7.0   ULTRASOUND                                                        12/19/2024 00:39:43 PAGE 2   
-
 END OF MODULE INFORMATION.
 
+C51 COMPILER V9.60.7.0   ULTRASOUND                                                        12/19/2024 00:45:22 PAGE 2   
 
-C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

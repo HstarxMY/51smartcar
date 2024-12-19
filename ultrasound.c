@@ -25,7 +25,7 @@ void ultrasound ()  //超声波测距程序
 		TH1 = 0;				//设置定时初始值
 	
 	  Trig = 1;      //发射一段脉冲 至少20us
-		Delay_us();     //延时20us
+		Delay_us(1);     //延时20us
 		Trig = 0;       //关闭脉冲
 	
 		while(!Echo);   //等待超声波模块返回脉冲
